@@ -1,4 +1,4 @@
-from pyscript import window, document
+from pyscript import document
 
 # 1. VARIABLES (Memory allocation for values)
 budget = 200.0
@@ -9,7 +9,7 @@ expense_ledger = []
 
 # Ensure UI updates securely
 def update_ui(text):
-    document.getElementById("output").innerText = text
+    document.querySelector("#output").innerText = text
 
 # Entry point of app runtime
 update_ui("Ready! Enter an expense and hit 'Add to Ledger'.\nBudget limit is $200.")
@@ -18,8 +18,8 @@ def add_item(event):
     global total_spent
     
     # 2. DATATYPES (We grab Strings from the DOM)
-    name_element = document.getElementById("itemName")
-    amount_element = document.getElementById("itemAmount")
+    name_element = document.querySelector("#itemName")
+    amount_element = document.querySelector("#itemAmount")
     
     name_str = name_element.value
     amount_str = amount_element.value
